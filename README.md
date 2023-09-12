@@ -42,6 +42,12 @@ The **geo_utils** repository houses an evolving collection of **Python utilities
 
 ## Georeferencing
 
+Georeferencing process results in locating a piece of the landscape visible in the photo in the corresponding geographic destination on the real-world map.
+
+![georeferencing](assets/images/georeferencing.png)
+
+Most photogrammetry software includes a manual geolocation step, where users visually identify markers in extensive image sets, a process that's time-intensive and error-prone. By adopting an automated approach, specifically with the programmatic detection of standardized markers like ArUco codes, the georeferencing process becomes more robust and efficient. **This section provides Python utilities that enhance georeferencing through automatic, high-accuracy GCP reference detection.**
+
 ---
 
 ### GCP images picker
