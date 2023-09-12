@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
+
+# Copyright (c) 2023 Aleksandra Badaczewska 
+#
+# GNU GENERAL PUBLIC LICENSE, version 3.0
+
 """
     Maps custom GCP IDs to corresponding ArUco marker IDs in imagery (uses WGS84 datum).
 """
@@ -94,7 +99,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(
         description="Maps custom GCP IDs to corresponding ArUco marker IDs in imagery (uses WGS84 datum).",
-        epilog="Example:\n        python gcp_to_aruco_mapper.py -g <gcp_file> -i <imagery_dir> -z 11 -o <output_file> -d 50"
+        epilog="Example: python gcp_to_aruco_mapper.py -g <gcp_file> -i <imagery_dir> -z 11 -o <output_file> -d 50"
     )
     parser.add_argument('-g', '--gcp-file', type=str, required=True, help='Path to the GCP file')
     parser.add_argument('-i','--imagery-path', type=str, required=True, help='Path to the imagery')
