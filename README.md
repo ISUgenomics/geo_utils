@@ -50,6 +50,32 @@ The **geo_utils** repository houses an evolving collection of **Python utilities
 
 **Usage Stage:** This utility is especially useful in the data preparation phase before running photogrammetry analysis (e.g., using ODM software). The script streamlines the image selection process by automatically (programmatically) identifying the most representative photos for each GCP, reducing the need for time-consuming visual inspections. It is especially useful when dealing with datasets that may contain thousands of images.
 
+```
+*********************************
+Automated selector for representative images with GCP markers.
+*********************************
+
+python3 gcp_images_picker.py -h
+
+required/optional arguments:
+  -h,                 --help                                  show this help message and exit
+  -i DATA_FILE_PATH,  --data-file-path DATA_FILE_PATH    r    path to the data file (4 or 7-column)
+  -w IMAGE_WIDTH,     --image-width IMAGE_WIDTH          r    width of the image
+  -l IMAGE_HEIGHT,    --image-height IMAGE_HEIGHT        r    height of the image
+  -n IMAGES_NUMBER,   --images-number IMAGES_NUMBER      o    number of images to select
+  -o OUTPUT,          --output OUTPUT                    o    name of the output file
+
+USAGE:
+     gcp_images_picker.py [-h] -i DATA_FILE_PATH -w IMAGE_WIDTH -l IMAGE_HEIGHT [-n IMAGES_NUMBER] [-o OUTPUT]
+Example:
+     python gcp_images_picker.py -i <data_file> -w <image_width> -h <image_height> -n <images_number>
+```
+
+
+```
+python3 <your_path>/geo_utils/TOOLS/gcp_images_picker.py -i markers_found.txt -w 6000 -l 4000 -n 10
+```
+
 ---
 
 ### GCP to ArUco mapper
@@ -65,13 +91,13 @@ Maps custom GCP IDs to corresponding ArUco marker IDs in imagery (uses WGS84 dat
 
 python3 gcp_to_aruco_mapper.py -h
 
-optional arguments:
-  -h,               --help                           show this help message and exit
-  -g GCP_FILE,      --gcp-file GCP_FILE              Path to the GCP file
-  -i IMAGERY_PATH,  --imagery-path IMAGERY_PATH      Path to the imagery directory
-  -z ZONE,          --zone ZONE                      UTM Zone
-  -o OUTPUT,        --output OUTPUT                  Path to the output file
-  -d MAX_DIST,      --max_dist MAX_DIST              Distance threshold in meter
+required/optional arguments:
+  -h,               --help                              show this help message and exit
+  -g GCP_FILE,      --gcp-file GCP_FILE            r    path to the GCP file
+  -i IMAGERY_PATH,  --imagery-path IMAGERY_PATH    r    path to the imagery directory
+  -z ZONE,          --zone ZONE                    r    UTM Zone
+  -o OUTPUT,        --output OUTPUT                o    path to the output file
+  -d MAX_DIST,      --max_dist MAX_DIST            o    distance threshold in meter
 
 USAGE:
      gcp_to_aruco_mapper.py [-h] -g GCP_FILE -i IMAGERY_PATH -z ZONE [-o OUTPUT] [-d MAX_DIST]
